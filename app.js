@@ -18,7 +18,7 @@ app.use(bodyparser.urlencoded({extended: true}))
 require('./db/connection.js')
 
 const path = require('path');
-app.use( Express.static(path.join(__dirname, './build')));
+app.use( express.static(path.join(__dirname, './build')));
 app.get('*' , (req ,res)=>{ res.sendFile(path.join(__dirname,'./build/index.html' ))});
 
 app.listen(2000,()=>{
